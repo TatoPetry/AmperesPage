@@ -1,0 +1,143 @@
+<div class="col-md-6 p-3 m-auto mt-3">
+  <form [formGroup]="formShows" (submit)="sendForm(formShows)">
+    <h1 class="text-center h1 text-light">Cadastro Shows</h1>
+    <div class="form-group">
+      <label class="col-sm-2 col-form-label">Titulo</label>
+      <input
+        formControlName="title"
+        type="text"
+        name="title"
+        class="form-control is-invalid"
+        placeholder="Nome do evento!"
+        isvalid
+        [isValid]="formShows.get('title').errors?.required">
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 col-form-label">Descrição</label>
+      <input
+        formControlName="description"
+        type="text" name="description"
+        class="form-control is-invalid"
+        placeholder="Descrição do evento"
+        isvalid
+        [isValid]="formShows.get('description').errors?.required">
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 col-form-label">Data</label>
+      <input
+        formControlName="date"
+        type="date"
+        name="user"
+        class="form-control is-invalid"
+        placeholder="Data do evento!"
+        isvalid
+        [isValid]="formShows.get('date').errors?.required">
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 col-form-label">Link</label>
+      <input
+      formControlName="link"
+      type="text"
+      name="link"
+      class="form-control is-invalid"
+      placeholder="link para evento!"
+      isvalid
+      [isValid]="formShows.get('link').errors?.required">
+    </div>
+    <div class="m-auto">
+      <button [disabled]="formShows.invalid" class="btn btn-outline-light ">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+
+<div class="col-md-6 mt-4 p-3 m-auto">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Evento</th>
+        <th scope="col">Data</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Excluir</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let show of show | async" class="table-active">
+      <tr scope="row">
+        <th>{{ show.title }}</th>
+        <th>{{ show.id }}</th>
+        <th><i class="fa fa-edit" data-toggle="modal" data-target="#modaledit" (click)="takeCurrentShow(show)"></i></th>
+        <th><i class="fa fa-trash" (dblclick)="removeData(show.id)"></i></th>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="modal" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="modaledit" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Show</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="formShowUpdate" (submit)="updateForm(formShowUpdate, currentShow.id)" *ngIf="currentShow">
+          <div class="form-group">
+            <label class="col-sm-2 col-form-label">Titulo</label>
+            <input
+            formControlName="title"
+            type="text" name="title"
+            class="form-control"
+            placeholder="{{currentShow.title }}"
+            isvalid
+            [isValid]="formShowUpdate.get('title').errors?.required">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-form-label">Descrição</label>
+            <input
+            formControlName="description"
+            type="text"
+            name="description"
+            class="form-control"
+            placeholder="{{ currentShow.description }}"
+            isvalid
+            [isValid]="formShowUpdate.get('description').errors?.required">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-form-label">Data</label>
+            <input
+            formControlName="date"
+            type="date"
+            name="user"
+            class="form-control"
+            placeholder="{{ currentShow.date }}"
+            isvalid
+            [isValid]="formShowUpdate.get('date').errors?.required">
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 col-form-label">Link</label>
+            <input
+            formControlName="link"
+            type="text"
+            name="link"
+            class="form-control"
+            placeholder="{{ currentShow.link }}"
+            isvalid
+            [isValid]="formShowUpdate.get('link').errors?.required">
+          </div>
+          <div class="m-auto">
+            <button [disabled]="formShowUpdate.invalid" class="btn btn-outline-light ">Submit</button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>

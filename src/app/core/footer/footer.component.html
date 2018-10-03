@@ -1,0 +1,32 @@
+<div class="page-footer font-small bg-transparent pt-4">
+
+  <div class="container">
+    <div class="row">
+
+        <div class="m-auto" *ngIf="authS.isLogged()">
+          <a
+          data-toggle="modal"
+          data-target="#modalConfirma">
+          <i class="fa fa-user fa-2x text-light"></i></a>
+        </div>
+
+      <div class="m-auto">
+        <a href="https://www.facebook.com/AmperesRock/"><i class="fa fa-facebook fa-2x text-light"></i></a>
+      </div>
+      <div class="m-auto">
+        <a href="https://www.youtube.com/user/AmperesTV"><i class="fa fa-youtube fa-2x text-light"></i></a>
+      </div>
+      <div class="m-auto">
+          <a href="https://www.palcomp3.com/amperesrock/"><i class="fa fa-music fa-2x text-light"></i></a>
+        </div>
+      <div class="m-auto">
+        <a href="mailto:amperes.rock@hotmail.com"><i class="fa fa-envelope fa-2x text-light"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright text-center py-3">Designed by:<a class="text-white">Tato Petry</a>
+  </div>
+</div>
+
+<app-modal-confirma></app-modal-confirma>

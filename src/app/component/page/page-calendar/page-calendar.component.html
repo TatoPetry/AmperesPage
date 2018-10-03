@@ -1,0 +1,11 @@
+<app-page-carousel></app-page-carousel>
+<div class="container">
+  <div *ngFor="let show of shows | async" class="card bg-transparent border-dark mb-3 col-md-12 p-0 mt-3">
+    <div class="card-header text-center h4 p-0">{{ show.title }}</div>
+    <div class="card-body p-0">
+      <h4 class="card-title text-center p-0"><i class="fa fa-calendar mr-1"></i>{{ show.date}}</h4>
+      <p class="card-text text-center p-0">{{ show.description }}</p>
+    </div>
+    <a href="{{ show.link }}" class="btn btn-outline-primary">Link Evento</a>
+  </div>
+</div>
