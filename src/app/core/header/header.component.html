@@ -9,22 +9,22 @@
   <div class="collapse navbar-collapse" id="navbarColor02" #menunav>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fa fa-home mr-1"></i>Home<span class="sr-only">(current)</span></a>
+        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/home']" routerLinkActive="router-link-active"><i class="fa fa-home mr-1"></i>Home</a>
       </li>
       <li class="nav-item">
-        <a menuClose [menu]="menunav" class="nav-link" href="/" [routerLink]="['/page/videos']" routerLinkActive="router-link-active"><i class="fa fa-play-circle mr-1"></i>Videos</a>
+        <a menuClose [menu]="menunav" class="nav-link" href="/" [routerLink]="['/videos']" routerLinkActive="router-link-active"><i class="fa fa-play-circle mr-1"></i>Videos</a>
       </li>
       <li class="nav-item">
-        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/page/agenda']" routerLinkActive="router-link-active"><i class="fa fa-calendar mr-1"></i> Agenda</a>
+        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/agenda']" routerLinkActive="router-link-active"><i class="fa fa-calendar mr-1"></i> Agenda</a>
       </li>
       <li class="nav-item">
-        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/page/sobre']" routerLinkActive="router-link-active"><i class="fa fa-book mr-1"></i>Sobre</a>
+        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/sobre']" routerLinkActive="router-link-active"><i class="fa fa-book mr-1"></i>Sobre</a>
       </li>
       <li *ngIf="auths.isLogged()" class="nav-item">
-        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/shows']" routerLinkActive="router-link-active"><i class="fa fa-calendar mr-1"></i>Inserir Agenda</a>
+        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/form/shows']" routerLinkActive="router-link-active"><i class="fa fa-calendar mr-1"></i>Inserir Agenda</a>
       </li>
       <li *ngIf="auths.isLogged()" class="nav-item">
-        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/videos']" routerLinkActive="router-link-active"><i class="fa fa-play-circle mr-1"></i>Inserir Video</a>
+        <a menuClose [menu]="menunav" class="nav-link" href="#" [routerLink]="['/form/videos']" routerLinkActive="router-link-active"><i class="fa fa-play-circle mr-1"></i>Inserir Video</a>
       </li>
 
     </ul>

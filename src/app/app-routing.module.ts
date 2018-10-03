@@ -15,35 +15,35 @@ import { AuthguardGuard } from './core/guards/authguard.guard';
 const routes: Routes = [
   {
     path: '',
-    children: [{
-      path: 'page/home',
-      component: PageComponent
-    },
-    {
-      path: 'page/videos',
-      component: PageVideosComponent
-    },
-    {
-      path: 'page/sobre',
-      component: PageSobreComponent
-    },
-    {
-      path: 'page/agenda',
-      component: PageCalendarComponent
-    }
-    ]
+    component: PageComponent
+  },
+  {
+    path: 'home',
+    component: PageComponent
+  },
+  {
+    path: 'videos',
+    component: PageVideosComponent
+  },
+  {
+    path: 'sobre',
+    component: PageSobreComponent
+  },
+  {
+    path: 'agenda',
+    component: PageCalendarComponent
   },
   {
     path: 'login',
     component: LoginComponent
   },
   {
-    path: 'shows',
+    path: 'form/shows',
     component: CalendarFormComponent,
     canActivate: [AuthguardGuard]
   },
   {
-    path: 'videos',
+    path: 'form/videos',
     component: VideosFormComponent,
     canActivate: [AuthguardGuard]
   },

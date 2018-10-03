@@ -75,7 +75,7 @@ constructor(
 
   signOut() {
     this.afa.auth.signOut().then(() => {
-      this.router.navigate(['/page']);
+      this.router.navigate(['/home']);
      });
   }
 
